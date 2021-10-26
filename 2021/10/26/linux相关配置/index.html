@@ -1,0 +1,366 @@
+<!DOCTYPE html><html lang="zh" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Ruotian's Space | Ruotian's Space</title><meta name="author" content="thekips"><meta name="copyright" content="thekips"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="Linux相关配置 Manjaro 更新库和软件 1sudo pacman -Syyu pacman源设置（可选）  更改官方镜像源 12sudo pacman-mirrors -i -c China -m rank &#x2F;&#x2F;更新镜像排名sudo pacman -Syy &#x2F;&#x2F;更新数据源 添加archlinuxcn源 添加以下内容至&#x2F;etc&#x2F;pacman.conf 123[archlinuxcn]Sig">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Ruotian&#39;s Space">
+<meta property="og:url" content="http://example.com/2021/10/26/linux%E7%9B%B8%E5%85%B3%E9%85%8D%E7%BD%AE/index.html">
+<meta property="og:site_name" content="Ruotian&#39;s Space">
+<meta property="og:description" content="Linux相关配置 Manjaro 更新库和软件 1sudo pacman -Syyu pacman源设置（可选）  更改官方镜像源 12sudo pacman-mirrors -i -c China -m rank &#x2F;&#x2F;更新镜像排名sudo pacman -Syy &#x2F;&#x2F;更新数据源 添加archlinuxcn源 添加以下内容至&#x2F;etc&#x2F;pacman.conf 123[archlinuxcn]Sig">
+<meta property="og:locale">
+<meta property="og:image" content="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg">
+<meta property="article:published_time" content="2021-10-26T03:32:20.175Z">
+<meta property="article:modified_time" content="2021-10-26T03:32:20.175Z">
+<meta property="article:author" content="thekips">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/2021/10/26/linux%E7%9B%B8%E5%85%B3%E9%85%8D%E7%BD%AE/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: 'Just',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isanchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Ruotian\'s Space',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2021-10-26 11:32:20'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if (GLOBAL_CONFIG_SITE.isHome && /iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 5.4.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">2</div></a></div></div></div><hr/></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Ruotian's Space</a></span><div id="menus"><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">No title</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2021-10-26T03:32:20.175Z" title="Created 2021-10-26 11:32:20">2021-10-26</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2021-10-26T03:32:20.175Z" title="Updated 2021-10-26 11:32:20">2021-10-26</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post View:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="Linux相关配置"><a href="#Linux相关配置" class="headerlink" title="Linux相关配置"></a>Linux相关配置</h1><p><img src="https://cdn.jsdelivr.net/gh/thekips/PicGo/Notes/2021/05/20210512195241.png" alt="83736962_p0"></p>
+<h3 id="Manjaro"><a href="#Manjaro" class="headerlink" title="Manjaro"></a>Manjaro</h3><ul>
+<li><p>更新库和软件</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -Syyu</span><br></pre></td></tr></table></figure></li>
+<li><p><strong>pacman</strong>源设置（可选）</p>
+<ul>
+<li><p>更改官方镜像源</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman-mirrors -i -c China -m rank //更新镜像排名</span><br><span class="line">sudo pacman -Syy //更新数据源</span><br></pre></td></tr></table></figure></li>
+<li><p>添加archlinuxcn源</p>
+<p>添加以下内容至<code>/etc/pacman.conf</code></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[archlinuxcn]</span><br><span class="line">SigLevel = Optional TrustAll</span><br><span class="line">Server = http://repo.archlinuxcn.org/$arch</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -Syyu //更新数据源</span><br><span class="line">sudo pacman -S archlinuxcn-keyring //安装导入GPG key</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p>安装<strong>yay</strong>，一个用Go编写的<strong>Arch User Repository（AUR）</strong>帮助工具，自动从PKGBUILD安装软件包，同时不需要sudo权限。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -S yay</span><br><span class="line"><span class="comment"># 另外，还需要安装基本打包工具</span></span><br><span class="line">sudo pacman -S base-devel</span><br></pre></td></tr></table></figure></li>
+<li><p><strong>aur</strong>源设置（可选）</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yay --aururl “https://aur.tuna.tsinghua.edu.cn” --save</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="代理设置"><a href="#代理设置" class="headerlink" title="代理设置"></a>代理设置</h3><h5 id="安装clash"><a href="#安装clash" class="headerlink" title="安装clash"></a>安装clash</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -S clash</span><br></pre></td></tr></table></figure>
+
+<h5 id="下载订阅文件"><a href="#下载订阅文件" class="headerlink" title="下载订阅文件"></a>下载订阅文件</h5><p>下载至<code>~/.confg/clash/</code>目录下，命名为<code>config.yaml</code>。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget -O ~/.confg/clash/config.yaml <span class="string">&quot;&lt;url.to.your.subscribtion&gt;&quot;</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="启动clash代理"><a href="#启动clash代理" class="headerlink" title="启动clash代理"></a>启动clash代理</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">clash</span><br></pre></td></tr></table></figure>
+
+<h5 id="alias-可选"><a href="#alias-可选" class="headerlink" title="alias(可选)"></a>alias(可选)</h5><p>开启clash设置代理一气呵成，只用输入fq命令。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">alias</span> fq=<span class="string">&quot;clash &gt; /dev/null &amp; ; sleep 0.1s ; clear ; export http_proxy=127.0.0.1:7890 &amp;&amp; export https_proxy=127.0.0.1:7890&quot;</span></span><br><span class="line"><span class="built_in">alias</span> ag=<span class="string">&quot;kill <span class="subst">$(ps -ef | grep clash | grep -v grep | awk &#x27;&#123;print $2&#125;&#x27;)</span>&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">alias</span> ne=<span class="string">&quot;neofetch | lolcat&quot;</span></span><br><span class="line"><span class="comment">#使用npm安装的picgo则不需要这些yaoezi</span></span><br><span class="line"><span class="built_in">alias</span> picgo=<span class="string">&quot;~/.config/Typora/picgo/linux/picgo&quot;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="Fcitx5输入法设置"><a href="#Fcitx5输入法设置" class="headerlink" title="Fcitx5输入法设置"></a>Fcitx5输入法设置</h3><h5 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -S fcitx5-rime fcitx5-configtool fcitx5-gtk fcitx5-qt</span><br></pre></td></tr></table></figure>
+
+<h5 id="配置环境变量"><a href="#配置环境变量" class="headerlink" title="配置环境变量"></a>配置环境变量</h5><p>修改 <code>~/.pam_environment</code>，添加如下内容：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">GTK_IM_MODULE=fcitx5</span><br><span class="line">QT_IM_MODULE=fcitx5</span><br><span class="line">XMODIFIERS=<span class="string">&quot;@im=fcitx5&quot;</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="皮肤（可选）"><a href="#皮肤（可选）" class="headerlink" title="皮肤（可选）"></a>皮肤（可选）</h5><p><a target="_blank" rel="noopener" href="https://github.com/hosxy/Fcitx5-Material-Color">Fcitx5 Material Color</a></p>
+<ul>
+<li><p>安装</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -S fcitx5-material-color</span><br></pre></td></tr></table></figure></li>
+<li><p>Fcitx Configuration中的Addons中修改，或者修改配置文件 <code>~/.config/fcitx5/conf/classicui.conf</code></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># Vertical Candidate List</span><br><span class="line">Vertical Candidate List=False</span><br><span class="line"># Use Per Screen DPI</span><br><span class="line">PerScreenDPI=True</span><br><span class="line"># Theme</span><br><span class="line">Theme=Material-Color-Blue</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h5 id="单行模式（可选）"><a href="#单行模式（可选）" class="headerlink" title="单行模式（可选）"></a>单行模式（可选）</h5><ul>
+<li><p>对于 fcitx5 自带的 pinyin，请修改 <code>~/.config/fcitx5/conf/pinyin.conf</code></p>
+</li>
+<li><p>对于 fcitx5-rime，请新建/修改 <code>~/.config/fcitx5/conf/rime.conf</code></p>
+</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># add below content</span></span><br><span class="line">PreeditInApplication=True</span><br></pre></td></tr></table></figure>
+
+<h3 id="Plank设置"><a href="#Plank设置" class="headerlink" title="Plank设置"></a>Plank设置</h3><p>用于桌面dock，其他类似软件占用都很高。</p>
+<h5 id="双屏显示"><a href="#双屏显示" class="headerlink" title="双屏显示"></a>双屏显示</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#实际使用会导致新增固定到dock异常。。</span></span><br><span class="line">mkdir ~/.config/plank/dock2</span><br><span class="line"><span class="built_in">cd</span> ~/.config/plank/dock2</span><br><span class="line">ln -s ../dock1/launchers</span><br><span class="line"><span class="comment">#实际上可以只执行下面命令（可选：加入开机启动项）:</span></span><br><span class="line"><span class="comment">#sh -c &quot;plank &amp; plank -n dock2&quot;</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="开机自启"><a href="#开机自启" class="headerlink" title="开机自启"></a>开机自启</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ln -s ~/.<span class="built_in">local</span>/share/applications/plank.desktop ~/.config/autostart/</span><br></pre></td></tr></table></figure>
+
+<h5 id="其他设置"><a href="#其他设置" class="headerlink" title="其他设置"></a>其他设置</h5><h6 id="chrome浏览器代理设置"><a href="#chrome浏览器代理设置" class="headerlink" title="chrome浏览器代理设置"></a>chrome浏览器代理设置</h6><p>将<code>~/.config/plank/dock*/launchers/</code>中的chrome启动文件<code>google-chrome.dockitem</code>改为下述：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[PlankDockItemPreferences]</span><br><span class="line">Launcher=file://~/.local/share/applications/google-chrome.desktop</span><br></pre></td></tr></table></figure>
+
+<p>其启动的<code>~/.local/share/applications/google-chrome.desktop</code>文件其实是系统菜单里的启动文件，因此在菜单中右键<code>Google chrome-&gt;Edit Application</code>中填入该命令：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/usr/bin/google-chrome-stable --proxy-server=<span class="string">&quot;http://127.0.0.1:7890&quot;</span> %U</span><br></pre></td></tr></table></figure>
+
+<h6 id="typora设置"><a href="#typora设置" class="headerlink" title="typora设置"></a><code>typora</code>设置</h6><p>将<code>~/.config/plank/dock*/launchers/</code>中的<code>typora</code>启动文件<code>typora.dockitem</code>改为下述：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[PlankDockItemPreferences]</span><br><span class="line">Launcher=file://~/.local/share/applications/typora.desktop</span><br></pre></td></tr></table></figure>
+
+<h3 id="Vim"><a href="#Vim" class="headerlink" title="Vim"></a>Vim</h3><h5 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h5><ul>
+<li><p>懒人一行式命令</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> git@github.com:thekips/vimrc.git ~/vim; <span class="built_in">cd</span> vim; sh install.sh;</span><br></pre></td></tr></table></figure></li>
+<li><p>之后在vim中执行<code>PlugInstall</code>命令安装插件，等待安装完成即可。更多命令可参考<a target="_blank" rel="noopener" href="https://github.com/junegunn/vim-plug#commands">[vim-plug#commands]</a>。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">:PlugInstall</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h5 id="键盘交换设置"><a href="#键盘交换设置" class="headerlink" title="键盘交换设置"></a>键盘交换设置</h5><p>这里主要是交换capslock键和escape键，在 <code>~/.xinitrc</code> or <code>~/.xsession</code>的最前端加上以下一行:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">setxkbmap -option caps:sescape</span><br></pre></td></tr></table></figure>
+
+<p>然后source一下以便立即生效，或者重启生效</p>
+<h5 id="配置后续"><a href="#配置后续" class="headerlink" title="配置后续"></a>配置后续</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 安装了YouCompleteMe，所以需要以下命令</span></span><br><span class="line">apt install build-essential cmake vim-nox python3-dev</span><br><span class="line"><span class="built_in">cd</span> ~/.vim/bundle/YouCompleteMe</span><br><span class="line">python3 install.py --all</span><br></pre></td></tr></table></figure>
+
+<p>一些可选配置待选择</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">vim-autoformat</span><br><span class="line">nerdtree</span><br><span class="line">delimitMate: OK</span><br><span class="line">neocompLete-vUim-table-moeoKvim-snippets: OK</span><br><span class="line">vim-align: OKYankRing.vim: OKgoyo.vim: OK</span><br><span class="line">limelight.vim: OKultisnips: OR</span><br><span class="line">vim-monokai: OKemmet-vim: OKvim-surround: OKvim-signature: OKvim-gitgutter: OKnerdcommenter: OKvim-airline: OK</span><br><span class="line">vim-colors-pencil: OKvim-jsbeautify: OK</span><br><span class="line">undotree: OK</span><br><span class="line">vim-easymotion: OKctrlp.vim: OK</span><br></pre></td></tr></table></figure>
+
+<h3 id="ZSH以及主题"><a href="#ZSH以及主题" class="headerlink" title="ZSH以及主题"></a>ZSH以及主题</h3><h5 id="安装zsh"><a href="#安装zsh" class="headerlink" title="安装zsh"></a>安装<code>zsh</code></h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -S zsh</span><br></pre></td></tr></table></figure>
+
+<p><code>zsh</code>提供色彩高亮，命令提示，智能补全，路径切换多选择。</p>
+<h5 id="切换shell为zsh"><a href="#切换shell为zsh" class="headerlink" title="切换shell为zsh"></a>切换shell为<code>zsh</code></h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chsh -s $(<span class="built_in">which</span> zsh)</span><br></pre></td></tr></table></figure>
+
+<h5 id="安装oh-my-zsh"><a href="#安装oh-my-zsh" class="headerlink" title="安装oh-my-zsh"></a>安装oh-my-<code>zsh</code></h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -S oh-my-zsh</span><br><span class="line"><span class="comment"># 如果没有，可以用下述命令下载</span></span><br><span class="line">sh -c <span class="string">&quot;<span class="subst">$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)</span>&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>据说可以方便<code>zsh</code>的配置，然而也没有确切的根据，下吧。</p>
+<h5 id="设置主题（可选）"><a href="#设置主题（可选）" class="headerlink" title="设置主题（可选）"></a>设置主题（可选）</h5><ul>
+<li><p>下载<code>powerlevel10k</code>主题（可选）</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> --depth=1 https://github.com/romkatv/powerlevel10k.git <span class="variable">$&#123;ZSH_CUSTOM:-<span class="variable">$HOME</span>/.oh-my-zsh/custom&#125;</span>/themes/powerlevel10k</span><br></pre></td></tr></table></figure>
+
+<p>安装完之后并按下述过程设置主题，生效之后可以使用<code>p10k configure</code>进行快速配置</p>
+<p>左边添加user@host</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 删除RIGHT_PROMT_ELEMENTS中的context，在LEFT_PROMPT_ELEMENTS中添加context</span></span><br><span class="line"><span class="comment"># 搜索 alaways show context，按注释提示删除某一行</span></span><br><span class="line"><span class="comment"># 搜索 Context color 修改context的颜色(76)</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">vim ~/.zshrc</span><br><span class="line"><span class="comment"># 在打开的配置文件中找到 ZSH_THEME 列，修改主题</span></span><br><span class="line"><span class="comment"># oh-my-zsh中自带的主题可以使用`ls ~/.oh-my-zsh/themes`命令查看，然后修改为对应的名字即可</span></span><br><span class="line">ZSH_THEME=<span class="string">&quot;powerlevel10k/powerlevel10k&quot;</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="安装插件"><a href="#安装插件" class="headerlink" title="安装插件"></a>安装插件</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 自带插件</span></span><br><span class="line"><span class="comment"># sudo git</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 手动安装</span></span><br><span class="line"><span class="comment"># zsh-autosuggestions</span></span><br><span class="line">git <span class="built_in">clone</span> https://github.com/zsh-users/zsh-autosuggestions <span class="variable">$&#123;ZSH_CUSTOM:-~/.oh-my-zsh/custom&#125;</span>/plugins/zsh-autosuggestions</span><br><span class="line"><span class="comment"># zsh-syntax-highlighting</span></span><br><span class="line">git <span class="built_in">clone</span> https://github.com/zsh-users/zsh-syntax-highlighting.git <span class="variable">$&#123;ZSH_CUSTOM:-~/.oh-my-zsh/custom&#125;</span>/plugins/zsh-syntax-highlighting</span><br></pre></td></tr></table></figure>
+
+<h5 id="其他问题"><a href="#其他问题" class="headerlink" title="其他问题"></a>其他问题</h5><h6 id="zsh中help命令失效"><a href="#zsh中help命令失效" class="headerlink" title="zsh中help命令失效"></a><code>zsh</code>中help命令失效</h6><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">help</span></span>()&#123;</span><br><span class="line">	bash -c <span class="string">&quot;help <span class="variable">$@</span>&quot;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="远程连接"><a href="#远程连接" class="headerlink" title="远程连接"></a>远程连接</h3><p>此章节所述远程连接均通过ssh实现。</p>
+<h5 id="1-frpc"><a href="#1-frpc" class="headerlink" title="1. frpc"></a>1. frpc</h5><p>新建并打开如下Systemctl Unit文件</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi /lib/systemd/system/frpc@.service</span><br></pre></td></tr></table></figure>
+
+<p>输入下述Systemctl Unit文件配置</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">[Unit]</span><br><span class="line">Description=SakuraFrp Service</span><br><span class="line">After=network.target</span><br><span class="line"></span><br><span class="line">[Service]</span><br><span class="line">Type=idle</span><br><span class="line">User=nobody</span><br><span class="line">Restart=on-failure</span><br><span class="line">RestartSec=60s</span><br><span class="line">ExecStart=/usr/local/bin/frpc -f %i</span><br><span class="line"></span><br><span class="line">[Install]</span><br><span class="line">WantedBy=multi-user.target</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">systemctl daemon-reload	#重载systemctl</span><br><span class="line">systemctl start frpc@wdnmdtoken666666:12345	#该命令启动frpc服务，@后为连接token</span><br><span class="line">systemctl enable frpc@wdnmdtoken666666:12345	#该命令确保开机启动frpc服务，@后为连接token</span><br></pre></td></tr></table></figure>
+
+<h5 id="2-ZEROTIER-ONE"><a href="#2-ZEROTIER-ONE" class="headerlink" title="2. ZEROTIER-ONE"></a>2. ZEROTIER-ONE</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 安装</span></span><br><span class="line">sudo pacman -S zerotier-one</span><br><span class="line"><span class="comment"># 启动</span></span><br><span class="line">systemctl start zerotier-one</span><br><span class="line"><span class="comment"># 自启</span></span><br><span class="line">systemctl <span class="built_in">enable</span> zerotier-one</span><br><span class="line"><span class="comment"># 加入自己在官网创建的局域网ID，join后跟ID</span></span><br><span class="line">zerotier-cli join e4da7455b22f2c33</span><br><span class="line"><span class="comment"># 查看加入的局域网</span></span><br><span class="line">zerotier-cli status</span><br></pre></td></tr></table></figure>
+
+<h3 id="Typora设置"><a href="#Typora设置" class="headerlink" title="Typora设置"></a>Typora设置</h3><h5 id="安装typora"><a href="#安装typora" class="headerlink" title="安装typora"></a>安装<code>typora</code></h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -S typora</span><br></pre></td></tr></table></figure>
+
+<p>该设置采用<code>github</code>同步<code>typora</code>的笔记，也可以用坚果云等云盘同步文件夹。</p>
+<h5 id="文件自动同步保存至Github"><a href="#文件自动同步保存至Github" class="headerlink" title="文件自动同步保存至Github"></a>文件自动同步保存至<code>Github</code></h5><p>该设置仅仅在系统菜单中生效，Plank设置见<a href="#%E5%85%B3%E4%BA%8Etypora%E8%AE%BE%E7%BD%AE">Plank设置-关于Typora设置</a></p>
+<ul>
+<li>方法一：在在菜单中右键<code>typora-&gt;Edit Application</code>中填入该命令，Working Directory设置在<code>typora</code>仓库目录下。</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sh -c <span class="string">&quot;git pull &amp;\typora ; git add . ; git commit -m &quot;</span>manjaro autosave<span class="string">&quot;&quot;</span>; sh -c <span class="string">&quot;git push&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="https://cdn.jsdelivr.net/gh/thekips/PicGo/Notes/2021/05/20210527152351.png" alt="image-20210527152350859"></p>
+<ul>
+<li>方法二：以脚本方式保存文件为<code>typora.sh</code>，之后在菜单中右键<code>typora-&gt;Edit Application</code>中直接运行该脚本，Working Directory设置在<code>typora</code>仓库目录下。</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">git pull &amp;</span><br><span class="line">typora</span><br><span class="line">git add .</span><br><span class="line">git commit -m &quot;manjaro autosave&quot;</span><br><span class="line">git push</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://cdn.jsdelivr.net/gh/thekips/PicGo/Notes/2021/05/20210527151818.png" alt="image-20210527151818023"></p>
+<h5 id="GitHub图床设置方法"><a href="#GitHub图床设置方法" class="headerlink" title="GitHub图床设置方法"></a>GitHub图床设置方法</h5><p><img src="https://cdn.jsdelivr.net/gh/thekips/PicGo/Notes/2021/05/20210512210049.jpg" alt="55980759_p0"></p>
+<h6 id="新建GitHub-仓库以及新建token"><a href="#新建GitHub-仓库以及新建token" class="headerlink" title="新建GitHub 仓库以及新建token"></a>新建GitHub 仓库以及新建token</h6><p>在<code>Github</code>上创建公有仓库（私有的仓库获得的图片链接过一阵就会失效）用于保存图片，命名为<code>PicGo</code>（可随意命名）。其次，在<a target="_blank" rel="noopener" href="https://github.com/settings/tokens">Github Token</a>设置界面新建token用<code>PicGo</code>操作仓库——Note随意填写，勾选repo即可。</p>
+<h5 id="Picgo安装"><a href="#Picgo安装" class="headerlink" title="Picgo安装"></a><code>Picgo</code>安装</h5><ul>
+<li><p>推荐，<code>npm</code>方式下载</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -S nodejs</span><br><span class="line">npm install -g picgo</span><br></pre></td></tr></table></figure></li>
+<li><p>系统包管理器下载，有图形界面</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -S picgo</span><br></pre></td></tr></table></figure></li>
+<li><p>另一种选择，在<code>typora</code>设置里下载<code>Picgo-core</code>，但会失去shell中使用命令上传剪贴板图片的能力。为了<code>Picgo-core</code>后续方便使用命令，创建以下别名。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># linux</span></span><br><span class="line"><span class="built_in">alias</span> picgo=<span class="string">&quot;~/.config/Typora/picgo/linux/picgo&quot;</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+<h6 id="Picgo配置"><a href="#Picgo配置" class="headerlink" title="Picgo配置"></a><code>Picgo</code>配置</h6><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">❯ picgo <span class="built_in">set</span> uploader</span><br><span class="line">? Choose a(n) uploader github</span><br><span class="line">? repo: thekips/PicGo</span><br><span class="line">? branch: main</span><br><span class="line">? token: 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</span><br><span class="line">? path: Notes/</span><br><span class="line">? customUrl: https://cdn.jsdelivr.net/gh/thekips/PicGo/</span><br><span class="line"><span class="comment"># 记得在使用之前选择uploader</span></span><br><span class="line">❯ picgo use uploader</span><br></pre></td></tr></table></figure>
+
+<h6 id="Picgo安装插件"><a href="#Picgo安装插件" class="headerlink" title="Picgo安装插件"></a><code>Picgo</code>安装插件</h6><ul>
+<li><p>前置条件，安装<code>nodejs</code>，因为<code>picgo</code>是使用<code>npm</code>来安装插件的</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman <span class="literal">-S</span> nodejs</span><br></pre></td></tr></table></figure></li>
+<li><p>安装super-prefix插件用于上传文件时重命名</p>
+</li>
+</ul>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 安装super-prefix插件</span></span><br><span class="line">❯ picgo install super<span class="literal">-prefix</span></span><br><span class="line"><span class="comment"># 设置super-prefix插件</span></span><br><span class="line">❯ picgo <span class="built_in">set</span> plugin      </span><br><span class="line">? Choose a plugin picgo<span class="literal">-plugin</span><span class="literal">-super</span><span class="literal">-prefix</span></span><br><span class="line">? 例如 YYYY/MM/DD/ YYYY/MM/</span><br><span class="line">? 例如 YYYYMMDDHHmmss YYYYMMDDHHmmss</span><br><span class="line">[<span class="type">PicGo</span> <span class="type">SUCCESS</span>]: Configure config successfully!</span><br></pre></td></tr></table></figure>
+
+<h3 id="Bgmi设置"><a href="#Bgmi设置" class="headerlink" title="Bgmi设置"></a>Bgmi设置</h3><p>项目地址 <a target="_blank" rel="noopener" href="https://github.com/BGmi/BGmi">BGmi</a>  <a target="_blank" rel="noopener" href="https://github.com/BGmi/bgmi-docker-all-in-one">bgmi-docker-all-in-one</a></p>
+<h5 id="Bgmi安装（Docker版）"><a href="#Bgmi安装（Docker版）" class="headerlink" title="Bgmi安装（Docker版）"></a>Bgmi安装（Docker版）</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 前置条件为已经安装docker</span></span><br><span class="line">docker run -d --net=host --name bgmi -v <span class="variable">$PWD</span>/Downloads/bgmi:/bgmi -p 80:80 -p 9091:9091 -e BGMI_SOURCE=mikan_project -e BGMI_ADMIN_TOKEN=ekips -e TZ=Asia/Hongkong codysk/bgmi-all-in-one</span><br></pre></td></tr></table></figure>
+
+<h5 id="Bgmi配置（Docker版）"><a href="#Bgmi配置（Docker版）" class="headerlink" title="Bgmi配置（Docker版）"></a>Bgmi配置（Docker版）</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 预备工作，进入容器内部</span></span><br><span class="line">docker <span class="built_in">exec</span> -it bgmi /bin/bash</span><br></pre></td></tr></table></figure>
+
+<h6 id="展示番剧日历"><a href="#展示番剧日历" class="headerlink" title="展示番剧日历"></a>展示番剧日历</h6><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bgmi cal</span><br></pre></td></tr></table></figure>
+
+<h6 id="订阅番剧"><a href="#订阅番剧" class="headerlink" title="订阅番剧"></a>订阅番剧</h6><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">bgmi add <span class="string">&quot;樱花任务&quot;</span> --episode 0</span><br><span class="line"><span class="comment"># 取消订阅指令</span></span><br><span class="line">bgmi delete --name <span class="string">&quot;樱花任务&quot;</span></span><br></pre></td></tr></table></figure>
+
+<h6 id="过滤番剧"><a href="#过滤番剧" class="headerlink" title="过滤番剧"></a>过滤番剧</h6><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 使用该命令拉取订阅的资源，可以看到很多版本</span></span><br><span class="line">bgmi fetch <span class="string">&quot;樱花任务&quot;</span></span><br><span class="line"><span class="comment"># 使用下述指令酌情过滤</span></span><br><span class="line">bgmi filter <span class="string">&quot;Re:CREATORS&quot;</span> --subtitle <span class="string">&quot;DHR動研字幕組,豌豆字幕组&quot;</span> --include 720P --exclude BIG5 -regex <span class="string">&quot;(DHR動研字幕組|豌豆字幕组).*(720P)&quot;</span></span><br></pre></td></tr></table></figure>
+
+<h6 id="更新库并下载番剧"><a href="#更新库并下载番剧" class="headerlink" title="更新库并下载番剧"></a>更新库并下载番剧</h6><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bgmi update --download <span class="comment"># download all undownloaded episode fo all followed bangumi</span></span><br></pre></td></tr></table></figure>
+
+<p>注意，docker版本的bgmi默认已经使用cron定时任务定时3小时更新库并下载番剧。</p>
+<h5 id="Bgmi自启（Docker版）"><a href="#Bgmi自启（Docker版）" class="headerlink" title="Bgmi自启（Docker版）"></a>Bgmi自启（Docker版）</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#容器运行时设置</span></span><br><span class="line">docker run --restart=always</span><br><span class="line"><span class="comment">#若容器已经启动</span></span><br><span class="line">docker update --restart=always &lt;CONTAINER ID/NAME&gt;</span><br></pre></td></tr></table></figure>
+
+<h5 id="Bgmi观影"><a href="#Bgmi观影" class="headerlink" title="Bgmi观影"></a>Bgmi观影</h5><p>创建docker版本的时候映射的是80端口，所以使用<code>127.0.0.1:80</code>即可访问web页面，开始愉快的看番之前可以手动更新一下封面，该命令在docker版本的bgmi中已经使用cron定时任务定时12小时执行。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bgmi cal --download-cover</span><br></pre></td></tr></table></figure>
+
+<h3 id="VmWare"><a href="#VmWare" class="headerlink" title="VmWare"></a>VmWare</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -Syu dkms base-devel --needed</span><br><span class="line"></span><br><span class="line">yay -S vmware-workstation        <span class="comment"># 安装最新版本的vmware-workstation</span></span><br><span class="line">sudo pacman  -S linux-headers    <span class="comment"># 安装系统对应的linux-headers</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">sudo modprobe -a vmw_vmci vmmon  <span class="comment"># 载入vmmon模块</span></span><br><span class="line"><span class="string">&#x27;&#x27;</span><span class="string">&#x27;</span></span><br><span class="line"><span class="string">否则启动系统时报错: could not open /dev/vmmon please make sure that the kernel moduel vmmon is load</span></span><br><span class="line"><span class="string">&#x27;</span><span class="string">&#x27;&#x27;</span></span><br><span class="line"></span><br><span class="line">sudo systemctl <span class="built_in">enable</span> vmware-networks.service  <span class="comment"># 自启动网络服务</span></span><br><span class="line">sudo systemctl start  vmware-networks.service  <span class="comment"># 开启网络服务</span></span><br><span class="line"><span class="string">&#x27;&#x27;</span><span class="string">&#x27;</span></span><br><span class="line"><span class="string">否则虚拟机无法连接网络</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="Foliate"><a href="#Foliate" class="headerlink" title="Foliate"></a>Foliate</h3><p><img src="https://cdn.jsdelivr.net/gh/thekips/PicGo/Notes/2021/05/20210513155002.png" alt="image-20210513155001568"></p>
+<p>电子文档阅读软件，界面美观。</p>
+<h3 id="TIM"><a href="#TIM" class="headerlink" title="TIM"></a>TIM</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 安装spark版本</span></span><br><span class="line">yay -S com.qq.tim.spark</span><br><span class="line"><span class="comment"># dpi设置</span></span><br><span class="line">WINEPREFIX=~/.deepinwine/Spark-TIM deepin-wine5 winecfg</span><br><span class="line"><span class="comment"># 若软件出现字体是方框的问题，安装以下两款字体</span></span><br><span class="line">yay -S wqy-microhei wqy-zenhei</span><br></pre></td></tr></table></figure>
+
+<h3 id="Wechat"><a href="#Wechat" class="headerlink" title="Wechat"></a>Wechat</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 安装spark版本</span></span><br><span class="line">yay -S com.qq.weixin.spark</span><br><span class="line"><span class="comment"># dpi设置</span></span><br><span class="line">WINEPREFIX=~/.deepinwine/Spark-WeChat deepin-wine5 winecfg</span><br><span class="line"><span class="comment"># 若软件出现字体是方框的问题，安装以下两款字体</span></span><br><span class="line">yay -S wqy-microhei wqy-zenhei</span><br></pre></td></tr></table></figure>
+
+<h3 id="一些兼容问题"><a href="#一些兼容问题" class="headerlink" title="一些兼容问题"></a>一些兼容问题</h3><h5 id="Windows格式磁盘无法挂载"><a href="#Windows格式磁盘无法挂载" class="headerlink" title="Windows格式磁盘无法挂载"></a>Windows格式磁盘无法挂载</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># If you can&#x27;t access the drive, execute the following command:</span></span><br><span class="line">sudo ntfsfix /dev/sdXY	<span class="comment"># where XY is the partition. *e.g sda2 or sdb1*</span></span><br><span class="line"><span class="comment"># Then, mount with:</span></span><br><span class="line">sudo mount -o rw /dev/sdXY</span><br></pre></td></tr></table></figure>
+
+<h5 id="npm"><a href="#npm" class="headerlink" title="npm"></a>npm</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 有些linux可能有奇怪的问题，若无法安装npm可使用下述命令</span></span><br><span class="line">curl -L https://npmjs.org/install.sh | sudo sh</span><br></pre></td></tr></table></figure>
+
+<h3 id="Pytorch"><a href="#Pytorch" class="headerlink" title="Pytorch"></a>Pytorch</h3><h5 id="pytorch环境配置"><a href="#pytorch环境配置" class="headerlink" title="pytorch环境配置"></a>pytorch环境配置</h5><h6 id="conda版本（亲测可用GPU）"><a href="#conda版本（亲测可用GPU）" class="headerlink" title="conda版本（亲测可用GPU）"></a>conda版本（亲测可用GPU）</h6><ul>
+<li><p>安装conda，这里建议安装miniconda</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -S miniconda3</span><br></pre></td></tr></table></figure></li>
+<li><p>新建一个环境，用于安装pytorch</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># conda create -n &lt;env_name&gt; python=&lt;python_ver&gt;</span></span><br><span class="line">conda create -n torch python=3.6</span><br></pre></td></tr></table></figure></li>
+<li><p>安装GPU版pytorch</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda install pytorch torchvision torchaudio cudatoolkit=11.1 -c pytorch-lts -c nvidia</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h6 id="docker版本（未成功使用GPU）"><a href="#docker版本（未成功使用GPU）" class="headerlink" title="docker版本（未成功使用GPU）"></a>docker版本（未成功使用GPU）</h6><ul>
+<li><p>安装<code>docker</code>，用于运行pytorch容器</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -S docker</span><br></pre></td></tr></table></figure></li>
+<li><p>安装<code>nvidia-container-toolkit</code>，用于docker版本运行时正确选择GPU</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -S nvidia-container-toolkit</span><br></pre></td></tr></table></figure></li>
+<li><p>查看Nvidia驱动版本</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nvidia-smi</span><br></pre></td></tr></table></figure></li>
+<li><p>查看当前Nvidia驱动，安装对应的<a target="_blank" rel="noopener" href="https://docs.nvidia.com/deeplearning/frameworks/support-matrix/index.html">pytorch版本</a></p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://ngc.nvidia.com/catalog/containers/nvidia:pytorch">拉取pytorch镜像</a> 链接中的<code>Pull Command</code></p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://ngc.nvidia.com/catalog/containers/nvidia:pytorch">运行pytorch容器</a> 链接中的<code>Running PyTorch</code></p>
+</li>
+</ul>
+<h3 id="制作启动盘"><a href="#制作启动盘" class="headerlink" title="制作启动盘"></a>制作启动盘</h3><h5 id="U盘"><a href="#U盘" class="headerlink" title="U盘"></a>U盘</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 使用下述命令确定自己的u盘设备是哪一个(如/dev/sdc)</span></span><br><span class="line">sudo fdisk -l</span><br><span class="line"><span class="comment"># 确定设备之后使用umount命令取消挂载，&lt;device&gt;替换为自己的u盘设备</span></span><br><span class="line">sudo umount &lt;device&gt;</span><br><span class="line"><span class="comment"># 使用dd命令制作启动盘，可能需要等待一段时间方可制作完毕</span></span><br><span class="line">sudo dd <span class="keyword">if</span>=&lt;path/to/iso&gt; of=&lt;device&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="好玩的东西"><a href="#好玩的东西" class="headerlink" title="好玩的东西"></a>好玩的东西</h3><h5 id="figlet"><a href="#figlet" class="headerlink" title="figlet"></a>figlet</h5><p>将输入的字符以空心字符的形式输出到标准输出</p>
+<p><img src="https://cdn.jsdelivr.net/gh/thekips/PicGo/Notes/2021/06/20210603114622.png" alt="image-20210603114621739"></p>
+<h5 id="lolcat"><a href="#lolcat" class="headerlink" title="lolcat"></a>lolcat</h5><p>将输入流以彩虹色形式输出到标准输出</p>
+<p><img src="https://cdn.jsdelivr.net/gh/thekips/PicGo/Notes/2021/06/20210603114432.png" alt="image-20210603114431498"></p>
+<h5 id="neofetch"><a href="#neofetch" class="headerlink" title="neofetch"></a>neofetch</h5><p>显示系统信息，和screenfetch差不多，不过需要自己下载。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/thekips/PicGo/Notes/2021/06/20210603114204.png" alt="image-20210603114203558"></p>
+<h5 id="oneko"><a href="#oneko" class="headerlink" title="oneko"></a>oneko</h5><p>一只追赶着你的小猫咪</p>
+<p><img src="https://cdn.jsdelivr.net/gh/thekips/PicGo/Notes/2021/06/20210609192028.png" alt="image-20210609192027835"></p>
+<h5 id="cmatrix"><a href="#cmatrix" class="headerlink" title="cmatrix"></a>cmatrix</h5><p>黑客帝国炫酷效果</p>
+<p><img src="https://cdn.jsdelivr.net/gh/thekips/PicGo/Notes/2021/06/20210609192207.png" alt="image-20210609192206910"></p>
+<h5 id="nyancat"><a href="#nyancat" class="headerlink" title="nyancat"></a>nyancat</h5><p>彩虹猫，不放图了。</p>
+<h5 id="sl"><a href="#sl" class="headerlink" title="sl"></a>sl</h5><p>跑火车，不放图了。</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">Author: </span><span class="post-copyright-info"><a href="mailto:undefined">thekips</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">Link: </span><span class="post-copyright-info"><a href="http://example.com/2021/10/26/linux%E7%9B%B8%E5%85%B3%E9%85%8D%E7%BD%AE/">http://example.com/2021/10/26/linux%E7%9B%B8%E5%85%B3%E9%85%8D%E7%BD%AE/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2021/10/26/hello-world/"><img class="next-cover" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">Next Post</div><div class="next_info">Hello World</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">thekips</div><div class="author-info__description"></div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">2</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>Announcement</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>Catalog</span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Linux%E7%9B%B8%E5%85%B3%E9%85%8D%E7%BD%AE"><span class="toc-number">1.</span> <span class="toc-text">Linux相关配置</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Manjaro"><span class="toc-number">1.0.1.</span> <span class="toc-text">Manjaro</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%A3%E7%90%86%E8%AE%BE%E7%BD%AE"><span class="toc-number">1.0.2.</span> <span class="toc-text">代理设置</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%AE%89%E8%A3%85clash"><span class="toc-number">1.0.2.0.1.</span> <span class="toc-text">安装clash</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%B8%8B%E8%BD%BD%E8%AE%A2%E9%98%85%E6%96%87%E4%BB%B6"><span class="toc-number">1.0.2.0.2.</span> <span class="toc-text">下载订阅文件</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%90%AF%E5%8A%A8clash%E4%BB%A3%E7%90%86"><span class="toc-number">1.0.2.0.3.</span> <span class="toc-text">启动clash代理</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#alias-%E5%8F%AF%E9%80%89"><span class="toc-number">1.0.2.0.4.</span> <span class="toc-text">alias(可选)</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Fcitx5%E8%BE%93%E5%85%A5%E6%B3%95%E8%AE%BE%E7%BD%AE"><span class="toc-number">1.0.3.</span> <span class="toc-text">Fcitx5输入法设置</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%AE%89%E8%A3%85"><span class="toc-number">1.0.3.0.1.</span> <span class="toc-text">安装</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F"><span class="toc-number">1.0.3.0.2.</span> <span class="toc-text">配置环境变量</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%9A%AE%E8%82%A4%EF%BC%88%E5%8F%AF%E9%80%89%EF%BC%89"><span class="toc-number">1.0.3.0.3.</span> <span class="toc-text">皮肤（可选）</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%8D%95%E8%A1%8C%E6%A8%A1%E5%BC%8F%EF%BC%88%E5%8F%AF%E9%80%89%EF%BC%89"><span class="toc-number">1.0.3.0.4.</span> <span class="toc-text">单行模式（可选）</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Plank%E8%AE%BE%E7%BD%AE"><span class="toc-number">1.0.4.</span> <span class="toc-text">Plank设置</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%8F%8C%E5%B1%8F%E6%98%BE%E7%A4%BA"><span class="toc-number">1.0.4.0.1.</span> <span class="toc-text">双屏显示</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%BC%80%E6%9C%BA%E8%87%AA%E5%90%AF"><span class="toc-number">1.0.4.0.2.</span> <span class="toc-text">开机自启</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%85%B6%E4%BB%96%E8%AE%BE%E7%BD%AE"><span class="toc-number">1.0.4.0.3.</span> <span class="toc-text">其他设置</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#chrome%E6%B5%8F%E8%A7%88%E5%99%A8%E4%BB%A3%E7%90%86%E8%AE%BE%E7%BD%AE"><span class="toc-number">1.0.4.0.3.1.</span> <span class="toc-text">chrome浏览器代理设置</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#typora%E8%AE%BE%E7%BD%AE"><span class="toc-number">1.0.4.0.3.2.</span> <span class="toc-text">typora设置</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Vim"><span class="toc-number">1.0.5.</span> <span class="toc-text">Vim</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE"><span class="toc-number">1.0.5.0.1.</span> <span class="toc-text">配置</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E9%94%AE%E7%9B%98%E4%BA%A4%E6%8D%A2%E8%AE%BE%E7%BD%AE"><span class="toc-number">1.0.5.0.2.</span> <span class="toc-text">键盘交换设置</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE%E5%90%8E%E7%BB%AD"><span class="toc-number">1.0.5.0.3.</span> <span class="toc-text">配置后续</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ZSH%E4%BB%A5%E5%8F%8A%E4%B8%BB%E9%A2%98"><span class="toc-number">1.0.6.</span> <span class="toc-text">ZSH以及主题</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%AE%89%E8%A3%85zsh"><span class="toc-number">1.0.6.0.1.</span> <span class="toc-text">安装zsh</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%88%87%E6%8D%A2shell%E4%B8%BAzsh"><span class="toc-number">1.0.6.0.2.</span> <span class="toc-text">切换shell为zsh</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%AE%89%E8%A3%85oh-my-zsh"><span class="toc-number">1.0.6.0.3.</span> <span class="toc-text">安装oh-my-zsh</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%AE%BE%E7%BD%AE%E4%B8%BB%E9%A2%98%EF%BC%88%E5%8F%AF%E9%80%89%EF%BC%89"><span class="toc-number">1.0.6.0.4.</span> <span class="toc-text">设置主题（可选）</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%AE%89%E8%A3%85%E6%8F%92%E4%BB%B6"><span class="toc-number">1.0.6.0.5.</span> <span class="toc-text">安装插件</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%85%B6%E4%BB%96%E9%97%AE%E9%A2%98"><span class="toc-number">1.0.6.0.6.</span> <span class="toc-text">其他问题</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#zsh%E4%B8%ADhelp%E5%91%BD%E4%BB%A4%E5%A4%B1%E6%95%88"><span class="toc-number">1.0.6.0.6.1.</span> <span class="toc-text">zsh中help命令失效</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%9C%E7%A8%8B%E8%BF%9E%E6%8E%A5"><span class="toc-number">1.0.7.</span> <span class="toc-text">远程连接</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1-frpc"><span class="toc-number">1.0.7.0.1.</span> <span class="toc-text">1. frpc</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-ZEROTIER-ONE"><span class="toc-number">1.0.7.0.2.</span> <span class="toc-text">2. ZEROTIER-ONE</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Typora%E8%AE%BE%E7%BD%AE"><span class="toc-number">1.0.8.</span> <span class="toc-text">Typora设置</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%AE%89%E8%A3%85typora"><span class="toc-number">1.0.8.0.1.</span> <span class="toc-text">安装typora</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%96%87%E4%BB%B6%E8%87%AA%E5%8A%A8%E5%90%8C%E6%AD%A5%E4%BF%9D%E5%AD%98%E8%87%B3Github"><span class="toc-number">1.0.8.0.2.</span> <span class="toc-text">文件自动同步保存至Github</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#GitHub%E5%9B%BE%E5%BA%8A%E8%AE%BE%E7%BD%AE%E6%96%B9%E6%B3%95"><span class="toc-number">1.0.8.0.3.</span> <span class="toc-text">GitHub图床设置方法</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#%E6%96%B0%E5%BB%BAGitHub-%E4%BB%93%E5%BA%93%E4%BB%A5%E5%8F%8A%E6%96%B0%E5%BB%BAtoken"><span class="toc-number">1.0.8.0.3.1.</span> <span class="toc-text">新建GitHub 仓库以及新建token</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Picgo%E5%AE%89%E8%A3%85"><span class="toc-number">1.0.8.0.4.</span> <span class="toc-text">Picgo安装</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#Picgo%E9%85%8D%E7%BD%AE"><span class="toc-number">1.0.8.0.4.1.</span> <span class="toc-text">Picgo配置</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#Picgo%E5%AE%89%E8%A3%85%E6%8F%92%E4%BB%B6"><span class="toc-number">1.0.8.0.4.2.</span> <span class="toc-text">Picgo安装插件</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Bgmi%E8%AE%BE%E7%BD%AE"><span class="toc-number">1.0.9.</span> <span class="toc-text">Bgmi设置</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#Bgmi%E5%AE%89%E8%A3%85%EF%BC%88Docker%E7%89%88%EF%BC%89"><span class="toc-number">1.0.9.0.1.</span> <span class="toc-text">Bgmi安装（Docker版）</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Bgmi%E9%85%8D%E7%BD%AE%EF%BC%88Docker%E7%89%88%EF%BC%89"><span class="toc-number">1.0.9.0.2.</span> <span class="toc-text">Bgmi配置（Docker版）</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#%E5%B1%95%E7%A4%BA%E7%95%AA%E5%89%A7%E6%97%A5%E5%8E%86"><span class="toc-number">1.0.9.0.2.1.</span> <span class="toc-text">展示番剧日历</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E8%AE%A2%E9%98%85%E7%95%AA%E5%89%A7"><span class="toc-number">1.0.9.0.2.2.</span> <span class="toc-text">订阅番剧</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E8%BF%87%E6%BB%A4%E7%95%AA%E5%89%A7"><span class="toc-number">1.0.9.0.2.3.</span> <span class="toc-text">过滤番剧</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E6%9B%B4%E6%96%B0%E5%BA%93%E5%B9%B6%E4%B8%8B%E8%BD%BD%E7%95%AA%E5%89%A7"><span class="toc-number">1.0.9.0.2.4.</span> <span class="toc-text">更新库并下载番剧</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Bgmi%E8%87%AA%E5%90%AF%EF%BC%88Docker%E7%89%88%EF%BC%89"><span class="toc-number">1.0.9.0.3.</span> <span class="toc-text">Bgmi自启（Docker版）</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Bgmi%E8%A7%82%E5%BD%B1"><span class="toc-number">1.0.9.0.4.</span> <span class="toc-text">Bgmi观影</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#VmWare"><span class="toc-number">1.0.10.</span> <span class="toc-text">VmWare</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Foliate"><span class="toc-number">1.0.11.</span> <span class="toc-text">Foliate</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#TIM"><span class="toc-number">1.0.12.</span> <span class="toc-text">TIM</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Wechat"><span class="toc-number">1.0.13.</span> <span class="toc-text">Wechat</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E4%BA%9B%E5%85%BC%E5%AE%B9%E9%97%AE%E9%A2%98"><span class="toc-number">1.0.14.</span> <span class="toc-text">一些兼容问题</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#Windows%E6%A0%BC%E5%BC%8F%E7%A3%81%E7%9B%98%E6%97%A0%E6%B3%95%E6%8C%82%E8%BD%BD"><span class="toc-number">1.0.14.0.1.</span> <span class="toc-text">Windows格式磁盘无法挂载</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#npm"><span class="toc-number">1.0.14.0.2.</span> <span class="toc-text">npm</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Pytorch"><span class="toc-number">1.0.15.</span> <span class="toc-text">Pytorch</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#pytorch%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE"><span class="toc-number">1.0.15.0.1.</span> <span class="toc-text">pytorch环境配置</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#conda%E7%89%88%E6%9C%AC%EF%BC%88%E4%BA%B2%E6%B5%8B%E5%8F%AF%E7%94%A8GPU%EF%BC%89"><span class="toc-number">1.0.15.0.1.1.</span> <span class="toc-text">conda版本（亲测可用GPU）</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#docker%E7%89%88%E6%9C%AC%EF%BC%88%E6%9C%AA%E6%88%90%E5%8A%9F%E4%BD%BF%E7%94%A8GPU%EF%BC%89"><span class="toc-number">1.0.15.0.1.2.</span> <span class="toc-text">docker版本（未成功使用GPU）</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%B6%E4%BD%9C%E5%90%AF%E5%8A%A8%E7%9B%98"><span class="toc-number">1.0.16.</span> <span class="toc-text">制作启动盘</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#U%E7%9B%98"><span class="toc-number">1.0.16.0.1.</span> <span class="toc-text">U盘</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A5%BD%E7%8E%A9%E7%9A%84%E4%B8%9C%E8%A5%BF"><span class="toc-number">1.0.17.</span> <span class="toc-text">好玩的东西</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#figlet"><span class="toc-number">1.0.17.0.1.</span> <span class="toc-text">figlet</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#lolcat"><span class="toc-number">1.0.17.0.2.</span> <span class="toc-text">lolcat</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#neofetch"><span class="toc-number">1.0.17.0.3.</span> <span class="toc-text">neofetch</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#oneko"><span class="toc-number">1.0.17.0.4.</span> <span class="toc-text">oneko</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#cmatrix"><span class="toc-number">1.0.17.0.5.</span> <span class="toc-text">cmatrix</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#nyancat"><span class="toc-number">1.0.17.0.6.</span> <span class="toc-text">nyancat</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#sl"><span class="toc-number">1.0.17.0.7.</span> <span class="toc-text">sl</span></a></li></ol></li></ol></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2021/10/26/linux%E7%9B%B8%E5%85%B3%E9%85%8D%E7%BD%AE/" title="No title"><img src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="No title"/></a><div class="content"><a class="title" href="/2021/10/26/linux%E7%9B%B8%E5%85%B3%E9%85%8D%E7%BD%AE/" title="No title">No title</a><time datetime="2021-10-26T03:32:20.175Z" title="Created 2021-10-26 11:32:20">2021-10-26</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/10/26/hello-world/" title="Hello World"><img src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Hello World"/></a><div class="content"><a class="title" href="/2021/10/26/hello-world/" title="Hello World">Hello World</a><time datetime="2021-10-26T02:49:39.045Z" title="Created 2021-10-26 10:49:39">2021-10-26</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2021 By thekips</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Read Mode"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="Toggle Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle between single-column and double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table Of Contents"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="Back To Top"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
